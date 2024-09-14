@@ -12,7 +12,8 @@ require: rubocop-performance
 
 AllCops:
   NewCops: enable
-  ParserEnginer: parser_prism
+  StyleGuideBaseURL: https://rubystyle.guide
+  ParserEngine: parser_prism
   TargetRubyVersion: 3.3
 
 Naming/VariableName:
