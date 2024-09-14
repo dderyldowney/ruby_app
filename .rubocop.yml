@@ -15,6 +15,7 @@ AllCops:
   StyleGuideBaseURL: https://rubystyle.guide
   ParserEngine: parser_prism
   TargetRubyVersion: 3.3
+  DocumentationBaseURL: https://docs.rubocop.org/rubocop
 
 Naming/VariableName:
   EnforcedStyle: snake_case
