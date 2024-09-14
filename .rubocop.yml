@@ -12,9 +12,15 @@ require: rubocop-performance
 
 AllCops:
   NewCops: enable
+  ParserEnginer: parser_prism
+  TargetRubyVersion: 3.3
+
+Naming/VariableName:
+  EnforcedStyle: snake_case
 
 Style/StringLiterals:
   EnforcedStyle: single_quotes
 
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
+
