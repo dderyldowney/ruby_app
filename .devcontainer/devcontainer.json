@@ -32,7 +32,7 @@
     },
     "name": "ruby_app",
     
-    # Create an empty .env file so creation doesn't fail on first run
+    // Create an empty .env file so creation doesn't fail on first run
     "onCreateCommand": "touch ./config/.env"
 
     "postAttachCommand": "bundle install --gemfile=./Gemfile",
