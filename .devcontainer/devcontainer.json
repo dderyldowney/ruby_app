@@ -31,6 +31,10 @@
         "ghcr.io/devcontainers/features/ruby:1": {}
     },
     "name": "ruby_app",
+    
+    # Create an empty .env file so creation doesn't fail on first run
+    "onCreateCommand": "touch ./config/.env"
+
     "postAttachCommand": "bundle install --gemfile=./Gemfile",
     // Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
     "remoteUser": "vscode",
