@@ -1,0 +1,20 @@
+name: Auto-close Dependabot PRs  
+
+on:  
+  pull_request:  
+    types: [opened, edited]  
+
+jobs:  
+  close-stale:  
+    runs-on: ubuntu-latest  
+    steps:  
+      - name: Close Dependabot Pull Requests  
+        if: github.event.pull_request.user.login == 'dependabot[bot]'  
+        run: |  
+          if [[ $(date -d "${{ github.event.pull_request.created_at }}" +%s) -lt $(date -d "-7 days" +%s) ]]; then  
+            echo "Closing stale Dependabot PR: ${{ github.event.pull_request.number }}"  
+            gh pr close ${{ github.event.pull_request.number }} --comment "Auto-closing stale Dependabot PR"  
+          fi  
+        env:  
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
